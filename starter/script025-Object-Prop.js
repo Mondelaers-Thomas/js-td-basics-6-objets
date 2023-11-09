@@ -9,11 +9,11 @@
 // Crée un objet 'moi' qui te présente et contient les propriétés suivantes :
 // nom, prenom, age, profession, nationalite
 const moi = {
-    nom: 'VotreNom',
-    prenom: 'VotrePrenom',
-    age: 25,
+    nom: 'Mondelaers',
+    prenom: 'Thomas',
+    age: 21,
     profession: 'Étudiant',
-    nationalite: 'Française'
+    nationalite: 'Belge'
 };
 
 // Affiche l'objet que tu viens de créer dans la console
@@ -23,10 +23,12 @@ console.log(moi);
 // 1°) Première méthode : l'opérateur [] avec une chaîne de caractères
 // Affiche dans la console : "Je m'appelle … …, j'ai … ans, je suis … et je suis …"
 // en allant à chaque fois rechercher les propriétés dans l'objet 'moi' que tu viens de créer
+console.log(`Je m'appelle ${moi["nom"]} ${moi["prenom"]} j'ai ${moi["age"]} ans, je suis ${moi["profession"]} et je suis ${moi["nationalite"]}`);
 
 // 2°) Deuxième méthode : l'opérateur . (point)
 // Affiche dans la console : "Je m'appelle … …, j'ai … ans, je suis … et je suis …"
 // en allant à chaque fois rechercher les propriétés dans l'objet 'moi' que tu viens de créer
+console.log(`Je m'appelle ${moi.nom} ${moi.prenom} j'ai ${moi.age} ans, je suis ${moi.profession} et je suis ${moi.nationalite}`);
 
 /* 3. Modification des propriétés de l'objet */
 // Trois années se sont écoulées, tu es sorti(e) de l'école, tu es à présent 'Web Developer'
@@ -35,7 +37,11 @@ console.log(moi);
 // Affiche à nouveau ta description dans la console :
 // "Je m'appelle … …, j'ai  … ans, je suis à présent un … (métier) … (nationalité) et je suis … (état civil)"
 // en allant à chaque fois rechercher les propriétés dans l'objet 'moi' que tu viens de créer
+moi.profession = "Web Developer";
+moi.etatCivile = "marié";
 
+console.log(moi);
+console.log(`Je m'appelle ${moi.nom} ${moi.prenom} j'ai ${moi.age} ans, je suis ${moi.profession} et je suis ${moi.nationalite} et je suis ${moi.etatCivile}`);
 
 /*
 EXERCICE 4 :
@@ -50,3 +56,16 @@ EXERCICE 4 :
 - Ajoute une propriété "prix" avec la valeur 2.5
 - Affiche "Mon stylo coûte … euros"
 */
+const stylo = {
+    type: 'bille',
+    couleur: 'bleu',
+    marque: 'bic'
+}
+console.log(stylo);
+console.log(`J'écris avec un stylo ${stylo.type}(type) ${stylo.couleur}(couleur) de marque ${stylo.marque}`);
+
+stylo.couleur = 'rouge';
+console.log(`J'écris avec un stylo ${stylo.type}(type) ${stylo.couleur}(couleur) de marque ${stylo.marque}`);
+
+stylo.prix = 2.5;
+console.log(`Mon stylo coûte ${stylo.prix} euros`);

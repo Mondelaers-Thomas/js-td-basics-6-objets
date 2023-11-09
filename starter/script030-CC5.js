@@ -40,3 +40,25 @@ du tableau (c'est comme cela qu'on calcule une moyenne).
 
 BONNE CHANCE 😀
 */
+const facture = {
+    montant: [124, 48, 268, 180, 42],
+    montantPourBoire: [],
+    montantTotal: [],
+
+    pourBoire: function(){
+        for(let i = 0; i < this.montant.length; i++){
+            if(this.montant[i] <= 50){
+                this.montantPourBoire[i] = Number((this.montant[i] * 0.2).toFixed(2));
+                this.montantTotal[i] = this.montantPourBoire[i] + this.montant[i];
+            } else if(this.montant[i] > 50 && this.montant[i] <= 200){
+                this.montantPourBoire[i] =Number((this.montant[i] * 0.15).toFixed(2));
+                this.montantTotal[i] = this.montantPourBoire[i] + this.montant[i];
+            } else {
+                this.montantPourBoire[i] = Number((this.montant[i] * 0.1).toFixed(2));
+                this.montantTotal[i] = this.montantPourBoire[i] + this.montant[i];
+            }
+        }
+    }
+}
+facture.pourBoire();
+console.log(facture.montantPourBoire);
